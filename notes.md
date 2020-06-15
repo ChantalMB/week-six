@@ -172,5 +172,3 @@
   - General "upward" trend mid-year includes an increase in fatigue ha
 - Including details about a cold or the amount of rest you got seems unusual to include in a personal journal --> many topics included relating to these words
   - Did Cecilia have a balanced life, or one that was so busy that she cherished her times of rest enough to journal about it? If latter, did she choose this lifestyle or was it a result of fame (or something else)?
-
-- Her penchant for introversion yet extensive journalling about a bustling social life perhaps suggests the extra necessities required of a woman in a male dominated industry to be successful. Connections must be made and maintained, and extensive travel was a must.
