@@ -1,0 +1,39 @@
+install.packages('tidyverse')
+install.packages('tidytext')
+
+# slightly modified version of
+# https://tm4ss.github.io/docs/Tutorial_6_Topic_Models.html
+# by Andreas Niekler, Gregor Wiedemann
+
+# libraries
+library(tidyverse)
+library(tidytext)
+
+# load, clean, and get data into shape
+
+# cb = chapbooks
+cb  <- read_csv("voyant-terms.csv")
+
+# put the data into a tibble (data structure for tidytext)
+# we are also telling R what kind of data is in the 'text',
+# 'line', and 'data' columns in our original csv.
+# we are also stripping out all the digits from the text column
+
+cb_df <- tibble(id = cb$line, text = (str_remove_all(cb$text, "[0-9]")), date = cb$date)
+
+#turn cb_df into tidy format
+# use `View(cb_df)` to see the difference
+# from the previous table
+
+tidy_cb <- cb_df %>%
+  unnest_tokens(word, text)
+
+# the only time filtering happens
+# load up the default list of stop_words that comes
+# with the tidyverse
+
+data(stop_words)
+
+# delete stopwords from our data
+tidy_cb <- tidy_cb %>%
+  anti_join(stop_words)
